@@ -23,7 +23,7 @@ const name = 'Jane Smith'; // if value will not change;
 const numbers = [12, 45];
 numbers[1] = 88; // can change value
 numbers.push(15); // can add new value
-console.log(numbers);
+console.log(numbers); // [ 12, 88, 15 ]
 
 //const numbers = [50, 60, 34]; // can't change the variable with new array
 
@@ -41,7 +41,7 @@ for (var i = 0; i < 10; i++) {
   // var will be accessible outside the loop
   sum = sum + i;
 }
-console.log(i);
+console.log(i); // 10
 
 // use let instead
 let sum = 0;
@@ -71,11 +71,11 @@ function add(num1, num2 = 0) {
 }
 
 const total = add(15, 17);
-console.log(total);
+console.log(total); //32
 const total2 = add(15);
-console.log(total2);
+console.log(total2); // 15
 const total3 = add(15, 1);
-console.log(total3);
+console.log(total3); // 16
 ```
 
 ## 1.3 TEMPLATE STRING, MULTIPLE LINE STRING
@@ -85,10 +85,12 @@ const firstName = 'Justin';
 const lastName = 'TimerLake';
 const fullName = firstName + ' ' + lastName + ' is a good boy';
 console.log(fullName);
+// Justin TimerLake is a good boy
 
 // Create ES6 template instead:
 const fullName2 = `${firstName} ${lastName} is a nice person.`;
 console.log(fullName2);
+// Justin TimerLake is a nice person.
 
 const fullName3 = `${firstName} ${20 + 50 + 30} is a nice person.`;
 console.log(fullName3);
@@ -102,6 +104,10 @@ const multiLine2 = `I love you
 I miss you
 I need you`;
 console.log(multiLine2);
+
+/* I love you
+I miss you
+I need you */
 ```
 
 ## 1.4 ARROW FUNCTION, MULTIPLE PARAMETER, FUNCTION BODY
@@ -110,25 +116,25 @@ console.log(multiLine2);
 function doubleIt(num) {
   return num * 2;
 }
-console.log(doubleIt(2));
+console.log(doubleIt(2)); // 4
 
 const doubleIt2 = function myFun(num) {
   return num * 3;
 };
-console.log(doubleIt2);
+console.log(doubleIt2(2)); // 4
 
 // Arrow Function:
 // if one parameter
 const doubleIt3 = (num) => num * 2;
-console.log(doubleIt3(5));
+console.log(doubleIt3(5)); //25
 
 // if more than one parameter
 const add = (x, y) => x + y;
-console.log(add(4, 3));
+console.log(add(4, 3)); // 7
 
 // if no parameter
 const noParameter = () => 5;
-console.log(noParameter());
+console.log(noParameter()); // 5
 
 const doMath = (x, y) => {
   const sum = x + y;
@@ -137,7 +143,7 @@ const doMath = (x, y) => {
   return result;
 };
 
-console.log(doMath(7, 5));
+console.log(doMath(7, 5)); // 24
 ```
 
 ## 1.5 SPREAD OPERATOR, CONCATENATE MULTIPLE ARRAYS, ARRAY MAX
@@ -150,25 +156,28 @@ const ages3 = [25, 36, 22, 29];
 // const allAges = ages.concat(ages2).concat(ages3);
 const allAges = ages.concat(ages2).concat([5]).concat(ages3);
 console.log(allAges);
+// [ 12, 14, 16, 13, 17, 15, 16, 12,  5, 25, 36, 22, 29 ]
 
 const allAges2 = [ages, ages2, 5, ages3]; // array inside array
 console.log(allAges2);
+// [ [ 12, 14, 16, 13, 17 ], [ 15, 16, 12 ], 5, [ 25, 36, 22, 29 ] ]
 
 // spread operator
 const allAges3 = [...ages, ...ages2, 5, ...ages3]; // new array
 console.log(allAges3);
+// [ 12, 14, 16, 13, 17, 15, 16, 12,  5, 25, 36, 22, 29 ]
 
 const business = 650;
 const minister = 450;
 const sochib = 250;
 
 const maximum = Math.max(business, minister, sochib);
-console.log(maximum);
+console.log(maximum); // 650
 
 // if array
 const amount = [650, 450, 250];
 const maxAmount = Math.max(...amount);
-console.log(maxAmount);
+console.log(maxAmount); // 650
 ```
 
 ## 1.6 CLASS, CONSTRUCTOR, CREATE OBJECT FROM CLASS
@@ -185,13 +194,15 @@ class Student {
 const student1 = new Student(12, 'shuvo');
 const student2 = new Student(22, 'Mahiya');
 console.log(student1, student2);
+// Student { id: 12, name: 'shuvo', school: 'E-School' } Student { id: 22, name: 'Mahiya', school: 'E-School' }
 
 // access attribute:
-console.log(student1.name, student2.name);
+console.log(student1.name, student2.name); // shuvo Mahiya
 
 // new
 const student3 = new Student(22, 'Bappi');
 console.log(student3);
+// Student { id: 22, name: 'Bappi', school: 'E-School' }
 ```
 
 [Additional Resources - 1](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes){:target="\_blank"}  
@@ -222,11 +233,11 @@ class Child extends Parent {
 
 const baby = new Child('Arnold');
 const baby2 = new Child('Tom');
-console.log(baby);
-console.log(baby2);
+console.log(baby); // Child { fatherName: 'Schwarzenegger', name: 'Arnold' }
+console.log(baby2); // Child { fatherName: 'Schwarzenegger', name: 'Tom' }
 
-console.log(baby.getFullName());
-console.log(baby2.getFullName());
+console.log(baby.getFullName()); // Arnold Schwarzenegger
+console.log(baby2.getFullName()); // Tom Schwarzenegger
 
 // inheritance, encapsulation, polymorphism
 ```
@@ -250,18 +261,18 @@ const person = {
 };
 
 // way 1:
-console.log(person.sibling);
-console.log(person.sibling);
-console.log(person.sibling);
-console.log(person.sibling);
+console.log(person.sibling); // Ema Watson
+console.log(person.sibling); // Ema Watson
+console.log(person.sibling); // Ema Watson
+console.log(person.sibling); // Ema Watson
 
 // way 2:
 const sibling1 = person.sibling;
 const phoneNumber = person.phone;
-console.log(sibling1, phoneNumber);
-console.log(sibling1, phoneNumber);
-console.log(sibling1, phoneNumber);
-console.log(sibling1, phoneNumber);
+console.log(sibling1, phoneNumber); // Ema Watson 000 - 000 - 0000
+console.log(sibling1, phoneNumber); // Ema Watson 000 - 000 - 0000
+console.log(sibling1, phoneNumber); // Ema Watson 000 - 000 - 0000
+console.log(sibling1, phoneNumber); // Ema Watson 000 - 000 - 0000
 
 // way 3: efficient and convenient
 // one variable
@@ -280,12 +291,12 @@ const { phone } = person;
 //     friends: ['Tom Hancks', 'Tom Cruise', "Will Smith"]
 // };
 
-console.log(phone);
+console.log(phone); // 000 - 000 - 0000
 
 // more than one variable
 const { name, sibling, job } = person;
 
-console.log(name, sibling, job);
+console.log(name, sibling, job); // Jack William Ema Watson Facebook Analyst
 
 // if any property is not in object
 const {
@@ -293,7 +304,7 @@ const {
   salary, // is not in person object, will give undefined
 } = person;
 
-console.log(address, salary);
+console.log(address, salary); // Brooklyn undefined
 
 // array destructuring
 const friends2 = [
@@ -304,8 +315,8 @@ const friends2 = [
   'Sharukh Khan',
 ];
 const [first, nextFriend, ...restFriends] = friends2;
-console.log(first);
-console.log(restFriends);
+console.log(first); // Sakib Kha
+console.log(restFriends); // [ 'Aamir Khan', 'Salman Khan', 'Sharukh Khan' ]
 
 // accessing another object property from an object using deconstructing
 const complexObject = {
@@ -317,7 +328,7 @@ const complexObject = {
 };
 
 const { state } = complexObject.info;
-console.log(state);
+console.log(state); // NY
 ```
 
 [Additional Resources - 1](https://www.javascripttutorial.net/es6/javascript-object-destructuring/){:target="\_blank"}  
@@ -432,7 +443,7 @@ console.log(ageArray[10]); // if tried to access the element which is not exist
 function doSomething(x, y) {
   console.log(y);
 }
-console.log(doSomething(32));
+console.log(doSomething(32)); // undefined
 ```
 
 ## 2.3 DOUBLE EQUAL (==) VS TRIPLE EQUAL (===), IMPLICIT CONVERSION
@@ -478,7 +489,7 @@ for (let i = 0; i < numbers.length; i++) {
   const result = element * element;
   output.push(result);
 }
-// console.log(output);
+console.log(output); // [ 9, 16, 25, 36, 49, 81 ]
 
 // using map
 function square(element) {
@@ -493,26 +504,32 @@ const square3 = (x) => x * x;
 numbers.map(function (element, index, array) {
   // map can take three parameter
   console.log(element, index, array);
+  /*  3 0 [ 3, 4, 5, 6, 7, 9 ]
+    4 1 [ 3, 4, 5, 6, 7, 9 ]
+    5 2 [ 3, 4, 5, 6, 7, 9 ]
+    6 3 [ 3, 4, 5, 6, 7, 9 ]
+    7 4 [ 3, 4, 5, 6, 7, 9 ]
+    9 5 [ 3, 4, 5, 6, 7, 9 ] */
 });
 
 const result = numbers.map(function (element) {
   return element * element;
 });
-console.log(result);
+console.log(result); // [ 9, 16, 25, 36, 49, 81 ]
 
 // map and arrow function
 const result2 = numbers.map((x) => x * x);
-console.log(result2);
+console.log(result2); // [ 9, 16, 25, 36, 49, 81 ]
 
 // filter
 const numbers2 = [3, 4, 5, 6, 7, 9];
 const bigger = numbers2.filter((x) => x > 5); // will return matching element based on condition
-console.log(bigger);
+console.log(bigger); // [ 6, 7, 9 ]
 
 // find
 const numbers3 = [3, 4, 5, 6, 7, 9];
 const isThere = numbers3.find((x) => x > 5); // will return first matching element
-console.log(isThere);
+console.log(isThere); // 6
 
 // forEach, reduce
 ```
@@ -547,16 +564,16 @@ const students = [
 ];
 
 const names = students.map((s) => s.name);
-console.log(names);
+console.log(names); // [ 'Jeff Bezos', 'Elon Musk', 'Bill Gates', 'Tim Cook' ]
 
 const ids = students.map((s) => s.id);
-console.log(ids);
+console.log(ids); // [ 31, 31, 41, 71 ]
 
 const bigger = students.filter((s) => s.id > 40);
-console.log(bigger);
+console.log(bigger); // [ { id: 41, name: 'Bill Gates' }, { id: 71, name: 'Tim Cook' } ]
 
 const biggerOne = students.find((s) => s.id > 40);
-console.log(biggerOne);
+console.log(biggerOne); // { id: 41, name: 'Bill Gates' }
 ```
 
 ## 2.6 SCOPE, BLOCK SCOPE, ACCESS OUTER SCOPE VARIABLE
@@ -570,10 +587,10 @@ function sum(first, second) {
 }
 
 const output = sum(3, 7);
-console.log(output);
+console.log(output); // 30
 
 //console.log(result); // return error
-console.log(bonus);
+console.log(bonus); // 20
 
 function sum2(first, second) {
   let result = first + second;
@@ -592,7 +609,7 @@ function sum2(first, second) {
   return result;
 }
 const output2 = sum2(6, 7);
-console.log(output2);
+console.log(output2); // Cranky 13
 
 // Difference when var and let used and try to access variable before variable declaration
 //console.log(day); //Error: undefined
@@ -667,7 +684,7 @@ const nums3 = [1, 2, 3, 4, 5, 6, 7, 8];
 // const together = nums3.join(" ");
 // const together = nums3.join("ami");
 const together = nums3.join(',');
-console.log(together);
+console.log(together); // 1,2,3,4,5,6,7,8
 ```
 
 [Additional Resources - 1](https://www.freecodecamp.org/news/lets-clear-up-the-confusion-around-the-slice-splice-split-methods-in-javascript-8ba3266c29ae/){:target="\_blank"}  
@@ -686,7 +703,7 @@ for (let i = 0; i < nums.length; i++) {
     // debugger
     break;
   }
-  console.log(nums[i]);
+  console.log(nums[i]); // 1 2 3
 }
 
 const nums2 = [1, -2, 3, 4, -5, 6, 7, -8, 9];
@@ -696,7 +713,7 @@ for (let i = 0; i < nums2.length; i++) {
     // debugger
     continue;
   }
-  console.log(nums2[i]);
+  console.log(nums2[i]); // 1 3 4 6 7 9
 }
 ```
 

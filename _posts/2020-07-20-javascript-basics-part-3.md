@@ -556,8 +556,17 @@ function scrollFB() {
 // explnCallback('smith', 13);
 
 explnCallback('Robert', 17, washHand);
+/* Hello Robert
+  Your age 17
+  Wash hand with soap */
 explnCallback('smith', 13, takeShower);
+/* Hello smith
+  Your age 13
+  Take Shower */
 explnCallback('Jane', 21, scrollFB);
+/* Hello Jane
+  Your age 21
+  Scrolling FB */
 ```
 
 ## 2.4 ARGUMENTS AND DEAL WITH UNKNOWN NUMBER OF ARGUMENTS
@@ -568,20 +577,20 @@ function addNumber(num1, num2) {
 }
 
 let result = addNumber(3, 5);
-console.log(result);
+console.log(result); // 8
 
 // add more parameter value than specified in function
-let result2 = addNumber(3, 5, 8, 15);
-console.log(result2);
+let result2 = addNumber(3, 5, 7, 15);
+console.log(result2); // 8
 
 // read parameter value using arguments, arguments work inside function
 function addNumber2(num1, num2) {
   // console.log(arguments);
-  console.log(arguments[3]);
+  console.log(arguments[3]); // 15
   return num1 + num2;
 }
-let result2 = addNumber2(3, 5, 8, 15);
-console.log(result2);
+let result2 = addNumber2(3, 5, 7, 15);
+console.log(result2); // 8
 
 // arguments
 function addNumber3(num1, num2) {
@@ -597,7 +606,7 @@ function addNumber3(num1, num2) {
 }
 
 let result3 = addNumber3(3, 5, 8, 15, 29);
-console.log(result3);
+console.log(result3); // 60
 ```
 
 ## 2.5 HOW TO ORGANIZE CODE INSIDE A FUNCTION

@@ -210,7 +210,7 @@ const person = {
 
 console.log(person);
 // if access from outside object, if access inside object use this
-console.log(person.firstName); // access object property
+console.log(person.firstName); // Rahim // access object property
 
 // call function inside a object
 person.chargeBill(150);
@@ -383,9 +383,11 @@ class Person {
 // new keyword is used to create object from class
 const heroPerson = new Person('Blaise', 'Pascal', 25000);
 console.log(heroPerson);
+// Person { firstName: 'Blaise', lastName: 'Pascal', salary: 25000 }
 
 const friendlyPerson = new Person('Enrico', 'Fermi', 35000);
 console.log(friendlyPerson);
+// Person { firstName: 'Enrico', lastName: 'Fermi', salary: 35000 }
 
 // before ES6 function is used to create class, function name start with capital letter indicating it used for class
 function Person2(firstName, lastName, salary) {
@@ -396,6 +398,7 @@ function Person2(firstName, lastName, salary) {
 
 const oldPerson = new Person2('Grand', 'Papa', 12000);
 console.log(oldPerson);
+// Person2 { firstName: 'Grand', lastName: 'Papa', salary: 12000 }
 ```
 
 [Additional Resources](https://www.freecodecamp.org/news/demystifying-javascripts-new-keyword-874df126184c/){:target="\_blank"}

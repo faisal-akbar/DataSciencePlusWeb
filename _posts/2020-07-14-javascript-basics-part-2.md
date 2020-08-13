@@ -21,8 +21,7 @@ tags:
 // without function, not reusable:
 var inch = 156;
 var feet = inch / 12;
-console.log(inch);
-console.log(feet);
+console.log(feet); // 13
 
 // with function:
 function inchToFeet(inch) {
@@ -31,20 +30,20 @@ function inchToFeet(inch) {
 }
 
 var newFeet = inchToFeet(300);
-console.log(newFeet);
+console.log(newFeet); // 25
 
 // using index of an array:
 var inchArr = [156, 288, 300];
 
 var newFeet = inchToFeet(inchArr[1]);
-console.log(newFeet);
+console.log(newFeet); // 24
 
 // using for loop:
-var inchArr = [198, 208, 310];
+var inchArr = [156, 288, 300];
 
 for (i = 0; i < inchArr.length; i++) {
   var feet = inchArr[i] / 12;
-  console.log(feet);
+  console.log(feet); // 13 24 25
 }
 ```
 
@@ -142,10 +141,10 @@ function isLeapYear(year) {
   return year % 4 === 0;
 }
 
-console.log(isLeapYear(1700));
-console.log(isLeapYear(2016));
-console.log(isLeapYear(2000));
-console.log(isLeapYear(100));
+console.log(isLeapYear(1700)); // false
+console.log(isLeapYear(2016)); // true
+console.log(isLeapYear(2000)); // true
+console.log(isLeapYear(100)); // false
 
 // Method: 2
 // function isLeapYear2(year) {
@@ -160,20 +159,20 @@ function isLeapYear2(year) {
   }
 }
 
-console.log(isLeapYear2(1700));
-console.log(isLeapYear2(2016));
-console.log(isLeapYear2(2000));
-console.log(isLeapYear2(100));
+console.log(isLeapYear2(1700)); // The Year is not a leap year
+console.log(isLeapYear2(2016)); // The year is a leap Year
+console.log(isLeapYear2(2000)); // The year is a leap Year
+console.log(isLeapYear2(100)); // The Year is not a leap year
 
 // Method 3:
 function isLeapYear3(year) {
   return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
 }
 
-console.log(isLeapYear3(1700));
-console.log(isLeapYear3(2016));
-console.log(isLeapYear3(2000));
-console.log(isLeapYear3(100));
+console.log(isLeapYear(1700)); // false
+console.log(isLeapYear(2016)); // true
+console.log(isLeapYear(2000)); // true
+console.log(isLeapYear(100)); // false
 ```
 
 [Additional Resources- 1](https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-6.php){:target="\_blank"}  
@@ -207,7 +206,7 @@ function newFactorial(n) {
 }
 
 let result = newFactorial(5);
-console.log(result);
+console.log(result); // 120
 ```
 
 ## 1.5 CALCULATE FACTORIAL OF A NUMBER USING A WHILE LOOP
@@ -223,7 +222,7 @@ while (i <= 10) {
   i++;
 }
 
-console.log(factorial);
+console.log(factorial); // 3628800
 
 // using function and while:
 function newFactorial(n) {
@@ -237,7 +236,7 @@ function newFactorial(n) {
 }
 
 let result = newFactorial(6);
-console.log(result);
+console.log(result); // 720
 
 // reverse way:
 // 10!=1*2*3*4*5*6*7*8*9*10
@@ -258,7 +257,7 @@ function factorialize(n) {
   return newNum;
 }
 
-console.log(factorialize(6));
+console.log(factorialize(6)); // 720
 
 // using while:
 let i = 5;
@@ -267,7 +266,7 @@ while (i >= 1) {
   factorial2 = factorial2 * i;
   i--;
 }
-console.log(factorial2);
+console.log(factorial2); // 120
 
 function factorialize2(n) {
   let i = n;
@@ -279,7 +278,7 @@ function factorialize2(n) {
   return factorial2;
 }
 
-console.log(factorialize2(6));
+console.log(factorialize2(6)); // 720
 ```
 
 ## 1.6 CALCULATE FACTORIAL IN A RECURSIVE FUNCTION
@@ -304,7 +303,7 @@ function rFactorial(n) {
 }
 
 let nResult = rFactorial(10);
-console.log(nResult);
+console.log(nResult); // 3628800
 ```
 
 [Additional Resource](<https:// www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/#:~:text=function%20factorialize(num)%20%7B%20%2F%2F%20If%20num%20%3D%200%20OR,num%20*%3D%20i%3B%20%2F*%20num>){:target="\_blank"}
@@ -332,6 +331,7 @@ for (let i = 2; i <= 12; i++) {
 }
 
 console.log(fibo);
+// [ 0,  1,  1,  2,  3,  5, 8, 13, 21, 34, 55, 89, 144 ]
 
 // using function:
 function fibonacci(n) {
@@ -345,6 +345,7 @@ function fibonacci(n) {
 
 let fiboResult = fibonacci(12);
 console.log(fiboResult);
+// [ 0,  1,  1,  2,  3,  5, 8, 13, 21, 34, 55, 89, 144 ]
 ```
 
 ## 1.8 FIBONACCI ELEMENT IN A RECURSIVE WAY
@@ -362,7 +363,7 @@ function rFibonacci(n) {
 }
 
 let rResult = rFibonacci(10);
-console.log(rResult);
+console.log(rResult); // 55
 ```
 
 [Additional Resources](https://medium.com/developers-writing/fibonacci-sequence-algorithm-in-javascript-b253dc7e320e){:target="\_blank"}
@@ -391,11 +392,11 @@ let sResult2 = sFibonacci(2);
 let sResult3 = sFibonacci(3);
 let sResult4 = sFibonacci(4);
 let sResult8 = sFibonacci(10);
-console.log(sResult1);
-console.log(sResult2);
-console.log(sResult3);
-console.log(sResult4);
-console.log(sResult8);
+console.log(sResult1); // [ 0, 1 ]
+console.log(sResult2); // [ 0, 1, 1 ]
+console.log(sResult3); // [ 0, 1, 1, 2 ]
+console.log(sResult4); // [ 0, 1, 1, 2, 3 ]
+console.log(sResult8); // [ 0, 1,  1,  2,  3, 5, 8, 13, 21, 34, 55]
 ```
 
 ## 1.10 CHECK WHETHER A NUMBER IS A PRIME NUMBER OR NOT
@@ -414,8 +415,8 @@ function isPrime(n) {
 let pResult1 = isPrime(128);
 let pResult2 = isPrime(79);
 
-console.log(pResult1);
-console.log(pResult2);
+console.log(pResult1); // Not a Prime Number
+console.log(pResult2); // The number is a Prime number
 ```
 
 # 2 JAVASCRIPT CODING PROBLEMS, SIMPLE INTERVIEW QUESTIONS
@@ -426,6 +427,7 @@ console.log(pResult2);
 let a = 5;
 let b = 7;
 console.log('Before swap: a=', a, ', b=', b);
+// Before swap: a= 5 , b= 7
 
 // Swap using a temporary variable:
 let temp = a; /* store a value in temp variable */
@@ -433,11 +435,13 @@ a = b; /* overwrite a value with a value */
 b = temp; /* overwrite b value with temp value */
 
 console.log('After swap: a=', a, ', b=', b);
+// After swap: a= 7 , b= 5
 
 // Swap using addition and difference:
 let x = 5;
 let y = 7;
 console.log('Before swap: x=', x, ', y=', y);
+// Before swap: x= 5 , y= 7
 
 x = x + y;
 /* add current x and current y so that we can get combined 
@@ -446,15 +450,18 @@ y = x - y; /* now new y equal the new x minus y, which is 12-7= 5 */
 x = x - y; /* now to transfer y value, overwrite new x, 12-5= 7  */
 
 console.log('After swap: x=', x, ', y=', y);
+// After swap: x= 7 , y= 5
 
 // Swap using destructing assignment:
 let p = 5;
 let q = 7;
 console.log('Before swap: p=', p, ', q=', q);
+// Before swap: p= 5 , q= 7
 
 [p, q] = [q, p];
 /* a temporary array [q, p] is created, which evaluates to [7,5] */
 console.log('After swap: p=', p, ', q=', q);
+// After swap: p= 7 , q= 5
 ```
 
 [Additional Resources](https://dmitripavlutin.com/swap-variables-javascript/){:target="\_blank"}
@@ -466,22 +473,22 @@ let num = 2.12458;
 
 // the Math.floor() function returns the largest integer less than or equal to a given number.
 let result1 = Math.floor(num);
-console.log(result1);
+console.log(result1); // 2
 
 // the Math.ceil() function always rounds a number up to the next largest integer.
 let result2 = Math.ceil(num);
-console.log(result2);
+console.log(result2); // 3
 
 // the Math.round() function returns the value of a number rounded to the nearest integer.
 let result3 = Math.round(num);
-console.log(result3);
+console.log(result3); // 2
 
 // random number 0 t0 10:
 let dice = Math.random() * 6; /* with decimal */
-console.log(dice);
+console.log(dice); // example: 1.2463552614334286
 
 let output = Math.round(dice); /* without decimal */
-console.log(output);
+console.log(output); // example: 1
 
 for (i = 0; i < 10; i++) {
   let dice = Math.random() * 6;
@@ -499,7 +506,7 @@ let sochib = 750;
 
 // if compare business and minister only:
 if (business > minister) {
-  console.log('Business is bigger');
+  console.log('Business is bigger'); // output
 } else {
   console.log('Minister is bigger');
 }
@@ -518,22 +525,24 @@ if (business > minister) {
     console.log('sochib is bigger');
   }
 }
+// output: sochib is bigger
 
 // the Math.max() function returns the largest of the zero or more numbers given as input
 
 let max = Math.max(business, minister, sochib);
-console.log(max);
+console.log(max); // 750
+// output: 750
 
 console.log(Math.max(1, 3, 2));
-// expected output: 3
+// output: 3
 
 console.log(Math.max(-1, -3, -2));
-// expected output: -1
+// output: -1
 
 const array1 = [1, 3, 2];
 
 console.log(Math.max(...array1));
-// expected output: 3
+// output: 3
 ```
 
 [Additional Resources- 1](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max){:target="\_blank"}  
@@ -554,6 +563,7 @@ for (var i = 0; i < marks.length; i++) {
 }
 
 console.log('Highest value is: ', max);
+// Highest value is:  98
 ```
 
 ## 2.5 SUM OF ALL NUMBERS IN AN ARRAY
@@ -568,6 +578,7 @@ for (let i = 0; i < numbers.length; i++) {
 }
 
 console.log('Total of the numbers: ', sum);
+// Total of the numbers:  312
 
 // using function:
 function getArrSum(arrayNumbers) {
@@ -582,9 +593,8 @@ function getArrSum(arrayNumbers) {
 let num = [45, 65, 68, 12, 3];
 let getArrSumResult = getArrSum(num);
 
-console.log('Total: ', getArrSumResult);
-
-console.log('Total: ', getArrSum([50, 100, 20, 10]));
+console.log('Total: ', getArrSumResult); // Total:  193
+console.log('Total: ', getArrSum([50, 100, 20, 10])); // Total:  180
 ```
 
 [Additional Resources- 1](https://codeburst.io/javascript-arrays-finding-the-minimum-maximum-sum-average-values-f02f1b0ce332){:target="\_blank"}  
@@ -596,7 +606,6 @@ console.log('Total: ', getArrSum([50, 100, 20, 10]));
 let arrNum = [3, 6, 2, 7, 3, 2, 8, 1, 9, 11, 56];
 
 let uniqueNum = [];
-
 for (let i = 0; i < arrNum.length; i++) {
   let element = arrNum[i]; /* each index element */
   let index = uniqueNum.indexOf(
@@ -609,6 +618,7 @@ for (let i = 0; i < arrNum.length; i++) {
   }
 }
 console.log(uniqueNum);
+// [ 3, 6,  2,  7, 8, 1, 9, 11, 56 ]
 
 // using function:
 function findUnique(arrayX) {
@@ -625,6 +635,7 @@ function findUnique(arrayX) {
 }
 
 console.log(findUnique([5, 5, 7, 9, 0, 5, 9, 0, 3]));
+// [ 5, 7, 9, 0, 3 ]
 ```
 
 ## 2.7 COUNT THE NUMBER OF WORDS IN A STRING
@@ -638,7 +649,7 @@ let speech = "I am a good person. I don't snore at night";
 let count = 0;
 for (let i = 0; i < speech.length; i++) {
   let char = speech[i];
-  console.log(char);
+  // console.log(char);
 
   if (char == ' ' && speech[i - 1] != ' ') {
     /* speech[i - 1] is applied to ignor double spaces */
@@ -648,7 +659,7 @@ for (let i = 0; i < speech.length; i++) {
 }
 count++; /* add 1 to fix the prior count */
 
-console.log(count);
+console.log(count); // 10
 ```
 
 ## 2.8 REVERSE A STRING
@@ -666,6 +677,7 @@ function reverseString(str) {
 let statement = 'Hello Alien, How are you doing?';
 let reverseStrOut = reverseString(statement);
 console.log(reverseStrOut);
+// ?gniod uoy era woH ,neilA olleH
 ```
 
 # 3 Exercise
@@ -685,7 +697,7 @@ function largestNumber(numbers) {
   return larger;
 }
 
-console.log(largestNumber([45, 78, 89, 23]));
+console.log(largestNumber([45, 78, 89, 23])); // 89
 ```
 
 ## 3.2 WRITE TWO FUNCTIONS TO FIND FACTORIAL
@@ -701,7 +713,7 @@ function factorial(num) {
   return fact;
 }
 
-console.log(factorial(5));
+console.log(factorial(5)); // 120
 
 // Write a recursive function to find factorial.
 function rFactorial(num) {
@@ -712,7 +724,7 @@ function rFactorial(num) {
   }
 }
 
-console.log(rFactorial(5));
+console.log(rFactorial(5)); // 120
 ```
 
 ## 3.3 FIND THE NUMBER OF ANIMAL
@@ -746,7 +758,7 @@ function animalCalculator(depth) {
   return animal;
 }
 
-console.log(animalCalculator(32));
+console.log(animalCalculator(32)); // 5100
 ```
 
 <!-- ```javascript
